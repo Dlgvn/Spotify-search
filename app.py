@@ -5,7 +5,6 @@ import os
 # Set page configuration
 st.set_page_config(
     page_title="Spotify Songs Search",
-    page_icon="🎵",
     layout="wide"
 )
 
@@ -21,7 +20,7 @@ def load_songs():
         return pd.DataFrame()
 
 def main():
-    st.title("🎵 Spotify Songs Search")
+    st.title("Spotify Songs Search")
     st.markdown("Search and filter through your Spotify songs collection")
     st.markdown("---")
     
@@ -46,7 +45,7 @@ def main():
     st.markdown("---")
     
     # Search and filters section
-    st.header("🔍 Search Filters")
+    st.header("Search Filters")
     
     col1, col2 = st.columns(2)
     
@@ -149,7 +148,7 @@ def main():
     # Display sample of data when no search is performed
     else:
         st.markdown("---")
-        st.header("🎵 All Songs Preview")
+        st.header("All Songs Preview")
         st.info("Use the filters above to search for specific songs, then click 'Search Songs'")
         
         # Show a preview of the data
@@ -172,3 +171,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
