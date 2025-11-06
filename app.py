@@ -5,6 +5,7 @@ import os
 # Set page configuration
 st.set_page_config(
     page_title="Spotify Songs Search",
+    page_icon="🎵",
     layout="wide"
 )
 
@@ -20,7 +21,7 @@ def load_songs():
         return pd.DataFrame()
 
 def main():
-    st.title("Spotify Songs Search")
+    st.title("🎵 Spotify Songs Search")
     st.markdown("Search and filter through your Spotify songs collection")
     st.markdown("---")
     
@@ -45,7 +46,7 @@ def main():
     st.markdown("---")
     
     # Search and filters section
-    st.header("Search Filters")
+    st.header("🔍 Search Filters")
     
     col1, col2 = st.columns(2)
     
@@ -102,7 +103,7 @@ def main():
         
         # Display results
         st.markdown("---")
-        st.header("Search Results")
+        st.header("📊 Search Results")
         
         if filtered_songs.empty:
             st.error("No songs found matching your criteria. Try adjusting your filters.")
@@ -138,7 +139,7 @@ def main():
             # Download option for filtered results
             csv = filtered_songs.to_csv(index=False)
             st.download_button(
-                label="Download Filtered Results as CSV",
+                label="📥 Download Filtered Results as CSV",
                 data=csv,
                 file_name="filtered_spotify_songs.csv",
                 mime="text/csv",
@@ -148,7 +149,7 @@ def main():
     # Display sample of data when no search is performed
     else:
         st.markdown("---")
-        st.header("All Songs Preview")
+        st.header("🎵 All Songs Preview")
         st.info("Use the filters above to search for specific songs, then click 'Search Songs'")
         
         # Show a preview of the data
