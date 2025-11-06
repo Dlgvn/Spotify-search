@@ -2,13 +2,11 @@ import streamlit as st
 import pandas as pd
 import os
 
-# Set page configuration
 st.set_page_config(
     page_title="Spotify Songs Search",
     layout="wide"
 )
 
-# File path
 updated_spotify_data_csv = "updated_spotify_data.csv"
 
 def load_songs():
@@ -24,7 +22,6 @@ def main():
     st.markdown("Search and filter through your Spotify songs collection")
     st.markdown("---")
     
-    # Load songs data
     songs_df = load_songs()
     
     if songs_df.empty:
@@ -171,4 +168,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
